@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Go</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+</head>
+<body>
+<main>
+ 
+    <section>
+        
+        <div>
+                <table >               
+                    <thead>
+                    <tr>
+                        <th scope="col">name</th>
+                        <th scope="col">id</th>
+                        <th scope="col">salary</th>
+                        <th scope="col">destignation</th>
+                     </tr>
+                    </thead>
+
+                    <tbody>
+                    {{ range . }}
+                    <tr>
+                        <td>{{.name }}</td>
+                        <td>{{.id }}</td>
+                        <td>{{.salary }}</td>
+                        <td>{{.destignation }}</td>
+                        
+                    </tr>
+                    {{ end }}
+                    </tbody>
+
+                </table>
+         </div>
+    </section>
+
+</main>
+</body>
+</html>
+
+
+<!-- 
+// my Dir. structure
+// .
+// ├── assets
+// │   └── css
+// │       └── tachyons.css
+// ├── main.go
+// └── templates
+//     ├── create.html
+//     ├── delete.html
+//     ├── index.html
+//     ├── read.html
+//     └── update.html -->
