@@ -31,6 +31,7 @@ func (r *RequestPdf) ParseTemplate(templateFileName string, data interface{}) er
 	if err != nil {
 		return err
 	}
+
 	buf := new(bytes.Buffer)
 	if err = t.Execute(buf, data); err != nil {
 		return err

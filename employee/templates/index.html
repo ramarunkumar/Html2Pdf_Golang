@@ -4,31 +4,48 @@
     <meta charset="UTF-8">
     <title>Go</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-</head>
+    </head>
+<style>
+    * {
+    box-sizing: border-box;
+    background-color: aliceblue;
+}
+.container{
+    margin:0 30%;
+    width:500px;
+}
+th {
+    padding: 10px;;
+}
+table, th, td {
+  border: 1px solid rgb(0, 112, 116);
+}
+</style>
 <body>
 <main>
  
     <section>
+        <h1>task{{.Emp}}</h1>
         
-        <div>
+        <div class="container" >
                 <table >               
                     <thead>
                     <tr>
-                        <th scope="col">name</th>
-                        <th scope="col">id</th>
-                        <th scope="col">salary</th>
-                        <th scope="col">destignation</th>
+                        <th>name</th>
+                        <th>id</th>
+                        <th>salary</th>
+                        <th>destignation</th>
                      </tr>
                     </thead>
 
                     <tbody>
-                    {{ range . }}
+                    
+                    {{range .Emp}}
                     <tr>
-                        <td>{{.name }}</td>
-                        <td>{{.id }}</td>
-                        <td>{{.salary }}</td>
-                        <td>{{.destignation }}</td>
+                        <td>{{.Name}}</td>
+                        <td>{{.Id}} </td>
+                        <td>{{.Salary}}</td>
+                        <td>{{.Destignation}}</td>
                         
                     </tr>
                     {{ end }}
@@ -43,16 +60,3 @@
 </html>
 
 
-<!-- 
-// my Dir. structure
-// .
-// ├── assets
-// │   └── css
-// │       └── tachyons.css
-// ├── main.go
-// └── templates
-//     ├── create.html
-//     ├── delete.html
-//     ├── index.html
-//     ├── read.html
-//     └── update.html -->

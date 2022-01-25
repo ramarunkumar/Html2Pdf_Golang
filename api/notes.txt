@@ -1,0 +1,54 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"log"
+	"net/http"
+)
+
+type Response struct {
+	Results []Datas `json:"results"`
+}
+type Datas struct {
+	Basics    Basics      `json:"basic"`
+	Addresses []Addresses `json:"addresses"`
+}
+
+type Basics struct {
+	FirstName string `json:"first_name"`
+	LastName  string `json:"last_name"`
+	Gender    string `json:"gender"`
+}
+
+type Addresses struct {
+	Country_code     string `json:"country_code"`
+	Country_name     string `json:"country_name"`
+	City             string `json:"city"`
+	Telephone_number string `json:"telephone_number"`
+}
+
+func main() {
+
+	// Api
+	fmt.Println("1. Performing Http Get...")
+	resp, err := http.Get("https://npiregistry.cms.hhs.gov/api/?version=2.1&number=1558444216")
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	// data
+	data, _ := ioutil.ReadAll(resp.Body)
+
+	// parse
+	bodyString := string(data)
+	fmt.Println("API Response as String:\n" + bodyString)
+
+	var res Response
+	json.Unmarshal(data, &res)
+
+	fmt.Println("-------------------------------------")
+	fmt.Println(res.Results)
+
+}

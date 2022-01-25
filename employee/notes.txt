@@ -1,4 +1,10 @@
-// /*
+sqltocsv
+
+//https://github.com/joho/sqltocsv
+
+
+
+csv2sql
 
 //    csv2sql - conversion program to convert a csv file to sql format
 //    		to allow easy checking / validation, and for import into a SQLite3
@@ -424,6 +430,10 @@
 // 	return headField
 // }
 
+
+Sql using Golang
+
+
 // // package main
 
 // // import (
@@ -484,7 +494,7 @@
 
 // // 	rows, err := db.Query("SELECT * FROM employee")
 
-// // 	res := sqltocsv.WriteFile("./employee.csv", rows)
+// // 	res := sqltocsv.WriteFile("./employee.csv", rows)-------------------------------------
 // // 	if err != nil {
 // // 		fmt.Println(res)
 // // 	}
